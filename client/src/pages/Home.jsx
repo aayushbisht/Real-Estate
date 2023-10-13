@@ -1,17 +1,31 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import img1 from '../images/img1.jpg';
+import img2 from '../images/img2.jpg';
+import img3 from '../images/img3.jpg';
+import img4 from '../images/img4.jpeg';
+import img5 from '../images/img5.jpg';
+
+
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
 import ListingItem from '../components/ListingItem';
-
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
   const [saleListings, setSaleListings] = useState([]);
   const [rentListings, setRentListings] = useState([]);
+
   SwiperCore.use([Navigation]);
-  console.log(offerListings);
+  console.log(img1);
+  const hardcodedImages = [
+    img1,
+    img2,
+    img3,
+    img4,
+    img5
+  ];
   useEffect(() => {
     const fetchOfferListings = async () => {
       try {
@@ -53,22 +67,24 @@ export default function Home() {
         Unlock the Gates <br /> <span className='text-slate-500'>to Royal Living !</span>
           <br />
         </h1>
-        <div className='text-gray-400 text-xs sm:text-sm'>
-          Roayal Realms is the best place to find your next perfect place to
+        <div className='text-gray-400 text-xs sm:text-lg'>
+          Royal Realms is the best place to find your next perfect place to
           live.
           <br />
           We have a wide range of properties for you to choose from.
         </div>
-        <Link
-          to={'/search'}
-          className='text-xs sm:text-sm text-blue-800 font-bold hover:underline'
-        >
-          Let's get started...
-        </Link>
+        <Link to="/search" className="text-xs sm:text-sm bg-[#64748b] text-white font-bold py-3 px-3 rounded-full hover:bg-[#a3b6ce] hover:underline w-32 flex justify-center">
+  List Now !
+</Link>
+
+
+
       </div>
 
+
+
       {/* swiper */}
-      <Swiper navigation>
+      {/* <Swiper navigation>
         {offerListings &&
           offerListings.length > 0 &&
           offerListings.map((listing) => (
@@ -83,6 +99,29 @@ export default function Home() {
               ></div>
             </SwiperSlide>
           ))}
+      </Swiper> */}
+      <Swiper spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}>
+        {hardcodedImages.map((image, index) => (
+          <SwiperSlide key={index}>
+            <div
+              style={{
+                background: `url(${image}) center no-repeat`,
+                backgroundSize: 'cover',
+              }}
+              className='h-[500px]'
+            ></div>
+          </SwiperSlide>
+        ))}
       </Swiper>
 
       {/* listing results for offer, sale and rent */}
