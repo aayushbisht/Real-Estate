@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import img1 from "../images/img1.jpg";
 import img2 from "../images/img2.jpg";
 import img3 from "../images/img3.jpg";
-import img4 from "../images/img4.jpeg";
+import img4 from "../images/img4.jpg";
 import img5 from "../images/img5.jpg";
 import { Link as Lnk } from "react-scroll";
 import animationData from "../Animation/animation1.json";
@@ -69,7 +69,7 @@ export default function Home() {
         <br />
       </h1>
       <div className="text-gray-400 text-xs sm:text-lg mt-4">
-        Royal Realms is the best place to find your next perfect place to live.
+        RoyalRealms is the best place to find your next perfect place to live.
         <br />
         We have a wide range of properties for you to choose from.
       </div>
