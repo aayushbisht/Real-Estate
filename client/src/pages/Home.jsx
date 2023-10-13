@@ -58,7 +58,7 @@ export default function Home() {
     <div>
       {/* top */}
 
-      <div className="flex flex-col p-4 sm:p-24 max-w-7xl mx-auto">
+    <div className="flex flex-col p-4 sm:p-24 max-w-7xl mx-auto">
   {/* Content on top for desktop and tablets */}
   <div className="hidden sm:flex flex-row sm:items-center sm:justify-between">
     {/* Content */}
@@ -105,20 +105,20 @@ export default function Home() {
     </div>
   </div>
   {/* Content on top, Image on the bottom for mobile devices */}
-  <div className="sm:hidden flex flex-col items-center justify-center">
+  <div className="sm:hidden flex flex-col items-center justify-center mt-10">
     {/* Content for mobile */}
-    <div>
+    <div className="text-center">
       <h1 className="text-slate-700 font-bold text-3xl lg:text-6xl">
         Unlock the Gates <br />
         <span className="text-slate-500">to Royal Living !</span>
         <br />
       </h1>
-      <div className="text-gray-400 text-xs sm:text-lg mt-4">
+      <div className="text-gray-400 text-xs sm:text-sm mt-4">
         Royal Realms is the best place to find your next perfect place to live.
         <br />
         We have a wide range of properties for you to choose from.
       </div>
-      <div className="flex items-center gap-3 mt-4">
+      <div className="flex items-center justify-center gap-3 mt-4">
         <div className="flex justify-center items-center">
           <Lnk
             to="section08"
@@ -150,6 +150,7 @@ export default function Home() {
     </div>
   </div>
 </div>
+
 
 
 
